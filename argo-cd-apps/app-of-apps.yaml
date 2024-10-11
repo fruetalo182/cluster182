@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cluster182-apps
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/fruetalo182/cluster182'
+    targetRevision: HEAD
+    path: cluster182-apps/
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: cluster182
+  syncPolicy:
+      syncOptions:
+      - CreateNamespace=true
