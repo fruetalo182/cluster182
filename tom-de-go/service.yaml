@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: tom-de-go
+    namespace: tom-de-go
+    labels:
+      owner: fruetalo182
+      repo: "https://github.com/fruetalo182/tom-de-go"
+spec:
+  selector:
+    app: tom-de-go
+  ports:
+    - name: http
+      port: 8080
+      targetPort: http
+  type: ClusterIP
