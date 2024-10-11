@@ -1,0 +1,24 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+    name: tom-de-go
+    namespace: argocd
+    labels:
+      owner: fruetalo182
+      repo: "https://github.com/fruetalo182/tom-de-go"
+    annotations:
+        argocd.argoproj.io/sync-options: Validate=false
+spec:
+    project: default
+    source:
+        repoURL: https://github.com/fruetalo182/cluster182.git
+        targetRevision: HEAD
+        path: ./tom-de-go
+    destination:
+        server: https://kubernetes.default.svc
+        namespace: tom-de-go
+    syncPolicy:
+        automated: {}
+        syncOptions:
+        - CreateNamespace=true

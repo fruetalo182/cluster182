@@ -1,0 +1,24 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+    name: travis-gradle
+    namespace: argocd
+    labels:
+      owner: fruetalo182
+      repo: "https://github.com/fruetalo182/travis-gradle"
+    annotations:
+        argocd.argoproj.io/sync-options: Validate=false
+spec:
+    project: default
+    source:
+        repoURL: https://github.com/fruetalo182/cluster182.git
+        targetRevision: HEAD
+        path: ./travis-gradle
+    destination:
+        server: https://kubernetes.default.svc
+        namespace: travis-gradle
+    syncPolicy:
+        automated: {}
+        syncOptions:
+        - CreateNamespace=true
