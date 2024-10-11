@@ -6,7 +6,7 @@ metadata:
     namespace: maven-hoppus
     labels:
       owner: fruetalo182
-      repo: "https://github.com/fruetalo182/maven-hoppus"
+      repo: maven-hoppus
 spec:
   selector:
     app: maven-hoppus

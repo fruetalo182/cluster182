@@ -6,7 +6,7 @@ metadata:
     namespace: travis-gradle
     labels:
       owner: fruetalo182
-      repo: "https://github.com/fruetalo182/travis-gradle"
+      repo: travis-gradle
 spec:
     replicas: 1
     revisionHistoryLimit: 2
@@ -18,7 +18,7 @@ spec:
         labels:
           app: travis-gradle
           owner: fruetalo182
-          repo: "https://github.com/fruetalo182/travis-gradle"
+          repo: travis-gradle
       spec:
         containers:
           - name: travis-gradle

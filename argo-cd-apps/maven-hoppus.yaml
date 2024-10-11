@@ -6,7 +6,7 @@ metadata:
     namespace: argocd
     labels:
       owner: fruetalo182
-      repo: "https://github.com/fruetalo182/maven-hoppus"
+      repo: maven-hoppus
     annotations:
         argocd.argoproj.io/sync-options: Validate=false
 spec:

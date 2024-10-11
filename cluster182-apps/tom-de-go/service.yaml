@@ -6,7 +6,7 @@ metadata:
     namespace: tom-de-go
     labels:
       owner: fruetalo182
-      repo: "https://github.com/fruetalo182/tom-de-go"
+      repo: tom-de-go
 spec:
   selector:
     app: tom-de-go

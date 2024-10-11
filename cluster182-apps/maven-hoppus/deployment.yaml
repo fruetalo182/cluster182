@@ -6,7 +6,7 @@ metadata:
     namespace: maven-hoppus
     labels:
       owner: fruetalo182
-      repo: "https://github.com/fruetalo182/maven-hoppus"
+      repo: maven-hoppus
 spec:
     replicas: 1
     revisionHistoryLimit: 2
@@ -18,7 +18,7 @@ spec:
         labels:
           app: maven-hoppus
           owner: fruetalo182
-          repo: "https://github.com/fruetalo182/maven-hoppus"
+          repo: maven-hoppus
       spec:
         containers:
           - name: maven-hoppus
