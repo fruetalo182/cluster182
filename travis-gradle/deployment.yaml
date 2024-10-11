@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+---
+kind: Deployment
+metadata:
+    name: travis-gradle
+    namespace: travis-gradle
+    labels:
+      owner: fruetalo182
+      repo: "https://github.com/fruetalo182/travis-gradle"
+spec:
+    replicas: 1
+    revisionHistoryLimit: 2
+    selector:
+      matchLabels:
+        app: travis-gradle
+    template:
+      metadata:
+        labels:
+          app: travis-gradle
+          owner: fruetalo182
+          repo: "https://github.com/fruetalo182/travis-gradle"
+      spec:
+        containers:
+          - name: travis-gradle
+            image: ghcr.io/fruetalo182/travis-gradle:latest
+            imagePullPolicy: IfNotPresent
+            resources:
+              requests:
+                cpu: "100m"
+                memory: "100Mi"
+              limits:
+                cpu: "200m"
+                memory: "200Mi"
+            ports:
+            - name: http
+              containerPort: 8080
+            envFrom:
+            - secretRef:
+                name: travis-gradle
+                optional: true

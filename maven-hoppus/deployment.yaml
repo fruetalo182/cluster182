@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+---
+kind: Deployment
+metadata:
+    name: maven-hoppus
+    namespace: maven-hoppus
+    labels:
+      owner: fruetalo182
+      repo: "https://github.com/fruetalo182/maven-hoppus"
+spec:
+    replicas: 1
+    revisionHistoryLimit: 2
+    selector:
+      matchLabels:
+        app: maven-hoppus
+    template:
+      metadata:
+        labels:
+          app: maven-hoppus
+          owner: fruetalo182
+          repo: "https://github.com/fruetalo182/maven-hoppus"
+      spec:
+        containers:
+          - name: maven-hoppus
+            image: ghcr.io/fruetalo182/maven-hoppus:latest
+            imagePullPolicy: IfNotPresent
+            resources:
+              requests:
+                cpu: "100m"
+                memory: "100Mi"
+              limits:
+                cpu: "200m"
+                memory: "200Mi"
+            ports:
+            - name: http
+              containerPort: 8080
+            envFrom:
+            - secretRef:
+                name: maven-hoppus
+                optional: true
