@@ -14,7 +14,7 @@ spec:
     source:
         repoURL: https://github.com/fruetalo182/cluster182.git
         targetRevision: HEAD
-        path: ./tom-de-go
+        path: ./cluster182-apps/tom-de-go
     destination:
         server: https://kubernetes.default.svc
         namespace: tom-de-go

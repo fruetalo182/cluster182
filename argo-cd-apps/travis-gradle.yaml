@@ -14,7 +14,7 @@ spec:
     source:
         repoURL: https://github.com/fruetalo182/cluster182.git
         targetRevision: HEAD
-        path: ./travis-gradle
+        path: ./cluster182-apps/travis-gradle
     destination:
         server: https://kubernetes.default.svc
         namespace: travis-gradle
