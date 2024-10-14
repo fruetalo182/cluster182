@@ -6,7 +6,7 @@ metadata:
     namespace: argocd
     labels:
       owner: fruetalo182
-      repo: "https://github.com/fruetalo182/tom-de-go"
+      repo: "tom-de-go"
     annotations:
         argocd.argoproj.io/sync-options: Validate=false
 spec:

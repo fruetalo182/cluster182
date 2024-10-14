@@ -17,7 +17,7 @@ spec:
         labels:
           app: tom-de-go
           owner: fruetalo182
-          repo: tom-de-go"
+          repo: tom-de-go
       spec:
         containers:
           - name: tom-de-go
