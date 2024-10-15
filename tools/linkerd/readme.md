@@ -11,7 +11,7 @@ linkerd install --crds | kubectl apply -f -
 linkerd install | kubectl apply -f -
 # Verify installation
 linkerd check
-
+# After installation inject linkerd proxy on the wished namespace
 
 # Install viz
 linkerd viz install | kubectl apply -f -
