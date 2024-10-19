@@ -1,0 +1,24 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+    name: rollout-canary-experiment
+    namespace: argocd
+    labels:
+      owner: fruetalo182
+      repo: "rollout-canary-experiment"
+    annotations:
+        argocd.argoproj.io/sync-options: Validate=false
+spec:
+    project: default
+    source:
+        repoURL: https://github.com/fruetalo182/cluster182.git
+        targetRevision: HEAD
+        path: ./cluster182/rollout-canary-experiment
+    destination:
+        server: https://kubernetes.default.svc
+        namespace: rollout-canary-experiment
+    syncPolicy:
+        automated: {}
+        syncOptions:
+        - CreateNamespace=true
