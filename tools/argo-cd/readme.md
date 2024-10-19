@@ -10,6 +10,10 @@ Before to run the install.yaml, create the argocd namespace
 kubectl create namespace argocd
 kubectl apply -f install.yaml -n argocd
 
+To configure the repositories connections as code, you need to apply it as a secret, using the syntax of the file secret-template.yaml
+
+kubectl apply -f tools/argo-cd/secret-template.yaml -n argocd
+
 - Customizations -
 
 1. Inside Deployment section of argocd-server, under "- command: \n - argocd-server" definition it is a "- --insecure" flag added to avoid TLS DNS redirection problems. (In our case CloudFlare takes care of that)
